@@ -24,10 +24,11 @@ public class PatientController {
         repository.save(new Patient(data));
     }
 
-
     @GetMapping
     public Page<PatientListData> listPatients (@PageableDefault(size = 5, sort = {"name"}) Pageable pagination) {
         return repository.findAll(pagination).map(PatientListData::new);
     }
+
+
 
 }
