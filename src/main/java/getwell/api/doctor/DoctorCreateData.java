@@ -14,12 +14,10 @@ public record DoctorCreateData(
         String email,
         @NotNull
         String phoneNumber,
-        @NotBlank
-        @Pattern(regexp = "\\d{4,6}")
+        @NotBlank @Pattern(regexp = "\\d{4,6}")
         String registerNumber,
         @NotNull
         Speciality speciality,
-        @NotNull
-        @Valid
+        @NotNull @Valid
         UserAddressData address) {
 }
