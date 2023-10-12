@@ -1,9 +1,7 @@
 package getwell.api.controller;
 
-import getwell.api.patient.Patient;
-import getwell.api.patient.PatientCreateData;
-import getwell.api.patient.PatientListData;
-import getwell.api.patient.PatientRepository;
+import getwell.api.patient.*;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,9 +24,20 @@ public class PatientController {
 
     @GetMapping
     public Page<PatientListData> listPatients (@PageableDefault(size = 5, sort = {"name"}) Pageable pagination) {
-        return repository.findAll(pagination).map(PatientListData::new);
+        return repository.findAllByActiveTrue(pagination).map(PatientListData::new);
     }
 
+    @PutMapping
+    @Transactional
+    public void update(@RequestBody @Valid PatientUpdateData data) {
+        var patient = repository.getReferenceById(data.id());
+        patient.updateData(data);
+    }
 
-
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void delete(@PathVariable Long id) {
+        var patient = repository.getReferenceById(id);
+        patient.delete();
+    }
 }
