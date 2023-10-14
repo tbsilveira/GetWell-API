@@ -1,4 +1,4 @@
-package getwell.api.doctor;
+package getwell.api.domain.doctor;
 
 public record DoctorListData(Long id, String name, String email, String registerNumber, Speciality speciality, Boolean active) {
 

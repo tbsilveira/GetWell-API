@@ -1,4 +1,4 @@
-package getwell.api.doctor;
+package getwell.api.domain.doctor;
 
 public enum Speciality {
 

@@ -1,6 +1,6 @@
 package getwell.api.controller;
 
-import getwell.api.patient.*;
+import getwell.api.domain.patient.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +20,7 @@ public class PatientController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity create(@RequestBody PatientCreateData data, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity create(@RequestBody @Valid PatientCreateData data, UriComponentsBuilder uriBuilder) {
         var patient = new Patient(data);
         repository.save(patient);
 

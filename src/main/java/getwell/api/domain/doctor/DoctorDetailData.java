@@ -1,6 +1,6 @@
-package getwell.api.doctor;
+package getwell.api.domain.doctor;
 
-import getwell.api.address.UserAddress;
+import getwell.api.domain.address.UserAddress;
 
 public record DoctorDetailData(Long id, String name, String email, String phoneNumber, String registerNumber, Speciality speciality, UserAddress address, Boolean active) {
 

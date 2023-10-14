@@ -1,4 +1,4 @@
-package getwell.api.address;
+package getwell.api.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

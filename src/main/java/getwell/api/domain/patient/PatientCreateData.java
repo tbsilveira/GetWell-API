@@ -1,23 +1,21 @@
-package getwell.api.doctor;
+package getwell.api.domain.patient;
 
-import getwell.api.address.UserAddressData;
+import getwell.api.domain.address.UserAddressData;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
-public record DoctorCreateData(
+public record PatientCreateData(
         @NotBlank
         String name,
-        @Email
+        @NotBlank @Email
         String email,
         @NotNull
         String phoneNumber,
-        @NotBlank @Pattern(regexp = "\\d{4,6}")
-        String registerNumber,
-        @NotNull
-        Speciality speciality,
+        @NotBlank @Pattern(regexp = "\\d{6}")
+        String taxNumber,
         @NotNull @Valid
         UserAddressData address) {
 }

@@ -1,6 +1,6 @@
-package getwell.api.patient;
+package getwell.api.domain.patient;
 
-import getwell.api.address.UserAddress;
+import getwell.api.domain.address.UserAddress;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

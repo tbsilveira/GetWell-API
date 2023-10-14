@@ -1,6 +1,6 @@
 package getwell.api.controller;
 
-import getwell.api.doctor.*;
+import getwell.api.domain.doctor.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

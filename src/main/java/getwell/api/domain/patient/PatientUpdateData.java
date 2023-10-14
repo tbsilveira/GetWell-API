@@ -1,6 +1,6 @@
-package getwell.api.patient;
+package getwell.api.domain.patient;
 
-import getwell.api.address.UserAddressData;
+import getwell.api.domain.address.UserAddressData;
 import jakarta.validation.constraints.NotNull;
 
 public record PatientUpdateData(
